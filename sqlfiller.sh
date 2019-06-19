@@ -29,11 +29,10 @@ read sftp_finish
 echo sftp start time: $sftp_finish
 echo "***************************"
 
-#change this to template name
-filename=script_number_$batch_id.sql
+filename=adp_production_run_updates_$batch_id.sql
 echo filename is $filename
 
-cp test.sql "$filename"
+cp adp_production_run_updates_template.sql "$filename"
 read noop
 sed -i -e "s/batch_id_/$batch_id/g" \
     -e "s/MM-DD/$date/g" \

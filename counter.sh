@@ -34,6 +34,7 @@ echo "Total number of records: $added"
 #minus sign throwing error??
 # subtracted=python -c "print $added + $check_items"
 # echo $[$added-$check_items]
+subtracted=$(($added-$check_items))
 # subtracted=$(python << END print($added - $check_items) END)
 echo "Subtracted: $subtracted"
 
