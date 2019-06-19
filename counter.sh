@@ -32,10 +32,11 @@ subtracted=$(($added-$check_items))
 
 echo "Subtracted: $subtracted"
 # echo $(($subtracted / 8 ))
-divided=$(python -c "print float($subtracted) // 8")
+# divided=$(python -c "print float($subtracted) // 8")
 echo $divided
 
-if [[ $(($divided-$check_items)) = $checks ]]
+# if [[ $(($divided-$check_items)) = $checks ]]
+if [[ $(($subtracted / 8)) = $checks ]]
 then
   echo "OK"
 else
