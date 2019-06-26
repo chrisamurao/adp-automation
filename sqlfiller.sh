@@ -34,7 +34,7 @@ echo -e ${GREEN}"sftp finish time: $sftp_finish${NC}"
 echo "***************************"
 
 #make this filepath flexible
-filename=adp_production_run_updates_$batch_id.sql
+filename="${STATUSINSERTDIR}adp_production_run_updates_$batch_id.sql"
 echo filename is $filename
 
 cp -n $TEMPLATE "$filename"
