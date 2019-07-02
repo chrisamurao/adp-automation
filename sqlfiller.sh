@@ -34,15 +34,14 @@ echo -e ${GREEN}"sftp finish time: $sftp_finish${NC}"
 echo "***************************"
 
 #make this filepath flexible
-filename="${STATUSINSERTDIR}adp_production_run_updates_$batch_id.sql"
+filename=adp_production_run_updates_$batch_id.sql
 echo filename is $filename
 
 cp -n $TEMPLATE "$filename"
 echo
-sed -i -e "s/batch_id_/$batch_id/g" \
+sed -i.'bak' -e "s/batch_id_/$batch_id/g" \
     -e "s/MM-DD/$date/g" \
     -e "s/_zip_start_time_/$zip_start/g" \
     -e "s/_zip_finish_time_/$zip_finish/g" \
     -e "s/_sftp_start_time_/$sftp_start/g" \
-    -e "s/_sftp_finish_time_/$sftp_finish/g" \
-    "$filename"
+    -e "s/_sftp_finish_time_/$sftp_finish/g" "$filename"
