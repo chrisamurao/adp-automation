@@ -28,7 +28,7 @@ echo -e ${GREEN}"sftp finish time: $sftp_finish${NC}"
 #make this filepath flexible
 filename=adp_production_run_updates_$batch_id.sql
 
-cp -n $TEMPLATE "$filename"
+cp -i $TEMPLATE "$filename"
 sed -i.'bak' -e "s/batch_id_/$batch_id/g" \
     -e "s/MM-DD/$date/g" \
     -e "s/_zip_start_time_/$zip_start/g" \
