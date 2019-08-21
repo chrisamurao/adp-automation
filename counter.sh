@@ -5,11 +5,12 @@
 
 if [[ $1 -eq 0 ]];
 then
-  echo "No file to analyze."
+  echo -e "${YELLOW}**** Hello! Beginning ***${NC}"
+  echo "No file given to analyze. Searching for files to count..."
   echo -e "Select file: using dir ${YELLOW}${PATHTOTXTFILE}${NC}"
-  ls -la ${PATHTOTXTFILE}
+  ls ${PATHTOTXTFILE} | grep QFU
   read f
-  set -- "$f"
+  set -- "${PATHTOTXTFILE}/$f"
   echo $1
 fi
 
@@ -41,6 +42,9 @@ echo
 #read amounts
 #maybe add web parser for these steps -> beautiful soup-ish or roll own
 #curl ...
+curl http://quasar/adp/admin/it/batch/288 | grep "Number of Check"
+
+
 read -p "Enter amount of checks in the batch: >>>>>> " checks
 read -p "Enter amount of check items in the batch: >>>>>> " check_items
 echo

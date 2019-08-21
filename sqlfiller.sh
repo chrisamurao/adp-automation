@@ -7,18 +7,19 @@
 . ./sqlfiller.config
 
 #add error checking
+echo -e "Happy Wednesday friend! Please navigate to this week's batch in quasar/ADP"
 echo -e  "Enter the ${YELLOW}batch id#${NC}"
 read -p "> " batch_id
 echo -e ${GREEN}"The batch id# is $batch_id${NC}"
 date=$(date +%m-%d)
 echo -e ${GREEN}"Today's date is: $date${NC}"
-echo -e "${YELLOW}Press enter to record Zip Time:${NC}"
+echo -e "${YELLOW}You can now zip the file. In next versions, this will be done automatically. Press enter after to record Zip Time:${NC}"
 read -p "> " pause
 zip_start=$(date +%T)
 zip_finish=$(date -v "+1S" +%T)
 echo -e ${GREEN}"Zip start time: $zip_start${NC}"
 echo -e ${GREEN}"Zip finish time: $zip_finish${NC}"
-echo -e "${YELLOW}Press enter to record Zip Time:${NC}"
+echo -e "${YELLOW}You can now SFTP the file. In next versions, this will be done automatically. Press enter to record Sftp Time:${NC}"
 read -p "> " pause
 sftp_start=$(date +%T)
 sftp_finish=$(date -v "+1S" +%T)
@@ -38,3 +39,4 @@ sed -i.'bak' -e "s/batch_id_/$batch_id/g" \
 
 rm $filename.bak
 echo Finished. Filename is $filename
+echo "Remember to pull and then push to the remote repository :)"

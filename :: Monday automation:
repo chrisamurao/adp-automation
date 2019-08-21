@@ -1,0 +1,12 @@
+// Monday automation:
+
+// Fire the script to create:
+/Applications/Firefox.app/Contents/MacOS/firefox http://jobs/excel_preview_report
+
+// Move to folder
+
+Start: /www/excel/[DATE] Preview Report.xlsx
+End: /Volumes/ADP/[DATE] Preview Report.xlsx
+
+// Check if file exists in folder
+ls -l "Volumes/Internal Documents"
